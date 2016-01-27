@@ -24,7 +24,7 @@
 %                dt : the timestep length to run. 
 %
 %        Output parameters:
-%       new_texture : the updated texture. An M x 3 list of Euler angles in
+%       new_texture : the updated texture. An 3 x M list of Euler angles in
 %                     degrees, representing the new orientation of the 
 %                     crystals.
 %
@@ -185,7 +185,7 @@ end
 
 function [gamdot] = sliprates(nslip,en,el, bige, ...
                               bigA1,bigA2,bigA3, ...
-                              bigB1,bigB2,bigB3) ;
+                              bigB1,bigB2,bigB3)
    bigS=zeros(3,3) ;
    gamdot = [0 0 0] ;
    for is=1:nslip
@@ -209,7 +209,7 @@ function [gamdot] = sliprates(nslip,en,el, bige, ...
    
 end
 
-function [a] = dircos(eul) ;
+function [a] = dircos(eul)
    a=zeros(3,3) ;
    a(1,1) = cos(eul(1))*cos(eul(3)) - cos(eul(2))*sin(eul(1))*sin(eul(3)) ;
    a(1,2) = cos(eul(3))*sin(eul(1)) + cos(eul(1))*cos(eul(2))*sin(eul(3)) ;
