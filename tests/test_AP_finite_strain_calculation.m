@@ -68,7 +68,7 @@ function test_AP_finite_strain_calculation(nstep)
       % Update the texture here...
 
       [texture] = ...
-            AP_Ol_texture_update(texture,rn,tau,vgrad,r12,r23,r13,dt);
+            AP_Ol_texture_update(texture,rn,tau,vgradR,r12,r23,r13,dt);
       
       % Update the FSE for this strain incrememnt
       [FSE] = update_finitestrain_McK(FSE,vgrad,dt);
@@ -90,7 +90,7 @@ function test_AP_finite_strain_calculation(nstep)
    
    % rotate the texture FoR to match Goulding et al Figure 8 (horizontal shear plane)
    % This does not seem to be quite right.
-   [texture]=AP_rotate_texture_Euler(texture,0,0,(ph/pi)*180) ;
+   [texture]=AP_rotate_texture_Euler(texture,(ph/pi)*180, 0, 0) ;
    
    % output the final texture    
    MVT_write_VPSC_file('simple_shear.out', ...
