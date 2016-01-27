@@ -71,7 +71,7 @@
 % ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 % POSSIBILITY OF SUCH DAMAGE.
 
-function [rotated_texture]=AP_rotate_texture(texture,phi1,Phi,phi2)
+function [rotated_texture]=AP_rotate_texture_Euler(texture,phi1,Phi,phi2)
    
    % Form a rotation matrix describing the rotation of
    % the texture
